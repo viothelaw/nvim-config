@@ -28,26 +28,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, keymapOpts)
       vim.keymap.set('n',         'gD', vim.lsp.buf.declaration,    keymapOpts)
 
-      -- use telescope builtin if installed.
-      local status_tsBuiltin, tsBuiltin = pcall(require, 'telescope.builtin')
-      if status_tsBuiltin then
-          vim.keymap.set('n', 'gd', tsBuiltin.lsp_definitions,        keymapOpts)
-          vim.keymap.set('n', 'gr', tsBuiltin.lsp_references,         keymapOpts)
-          vim.keymap.set('n', 'gt', tsBuiltin.lsp_type_definitions,   keymapOpts)
-      else
-          vim.keymap.set('n', 'gd', args.buf, vim.lsp.buf.definition, keymapOpts)
-          vim.keymap.set('n', 'gr', args.buf, vim.lsp.buf.references, keymapOpts)
-      end
+      vim.keymap.set('n',         'gd', vim.lsp.buf.definition,     keymapOpts)
+      vim.keymap.set('n',         'gr', vim.lsp.buf.references,     keymapOpts)
 
       local client = vim.lsp.get_client_by_id(args.data.client_id)
 
       if client:supports_method('textDocument/implementation') then
           -- Create a keymap for vim.lsp.buf.implementation ...
-          if status_tsBuiltin then
-              vim.keymap.set('n', 'gi', tsBuiltin.lsp_implementations, keymapOpts)
-          else
-              vim.keymap.set('n', 'gi', args.buf, vim.lsp.buf.implementation, keymapOpts)
-          end
+          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation,    keymapOpts)
       end
 
       if client:supports_method('textDocument/switchSourceHeader') then

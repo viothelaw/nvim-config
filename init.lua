@@ -11,10 +11,10 @@ require('plugins.colorscheme')
 require('plugins.bufferline')
 require('plugins.lualine')
 require('plugins.vim-fugitive')
-require('plugins.plenary') -- required by telescope
-require('plugins.telescope')
+require('plugins.fzf-lua')
 require('plugins.nvim-treesitter')
 require('plugins.lsp')
 
 -- run ':lua vim.pack.update()' to update packages
 -- run ':lua.print(vim.inspect(vim.pack.get()))' to see all packages
+-- run ':lua vim.pack.del({'nordic.nvim','nvim-lspconfig'}) to delete plugins from disk
