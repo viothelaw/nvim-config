@@ -82,6 +82,7 @@ require('bufferline').setup({
         show_tab_indicators = true,
         enforce_regular_tabs = false,
         separator_style = { '║', '║' },
+        truncate_names = false,
         indicator = { -- set active buffer indicator
             icon = '➡️', -- alternative icons ➡️ 🔷 ❖ 💠 👁‍🗨 ⛧⃝
             style = 'none', -- don't use icon
