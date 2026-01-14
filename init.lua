@@ -3,6 +3,8 @@ if (vim.pack == nil) then
      return
 end
 
+-- It's by choice to require each file manually rather than require all files in a directory.
+-- To have more control on adding and remoting configs or plugins
 require('config.options')
 require('config.keymaps')
 require('config.autocmds')
