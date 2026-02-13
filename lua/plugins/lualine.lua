@@ -13,14 +13,7 @@ require('lualine').setup({
     sections = {
         lualine_a = {'mode'},
         lualine_b = {'diagnostics', 'filename'},
-        lualine_c = { function()
-            local status_lsp_progress_ok, lsp_progress = pcall(require, 'lsp-progress')
-            if status_lsp_progress_ok then
-                return lsp_progress.progress()
-            else
-                return ''
-            end
-        end },
+        lualine_c = {'lsp_status' },
         lualine_x = {'encoding', 'fileformat', 'filetype'},
         lualine_y = {'progress'},
         lualine_z = {'location'}
