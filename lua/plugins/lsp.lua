@@ -82,15 +82,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       end
 
       if client:supports_method('textDocument/completion') then
-          local function pumvisible()
-              return tonumber(vim.fn.pumvisible()) ~= 0
-          end
-
           vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-          vim.opt.completeopt = { 'menuone', 'noselect', 'popup' }
-
-          vim.keymap.set('i', '<C-j>', function() return pumvisible() and '<C-n>' or '<C-j>' end, { expr = true, buffer=args.buf, desc='lsp - completion box move to next selection' })
-          vim.keymap.set('i', '<C-k>', function() return pumvisible() and '<C-p>' or '<C-k>' end, { expr = true, buffer=args.buf, desc='lsp - completion box move to prev selection' })
       end
   end
 })

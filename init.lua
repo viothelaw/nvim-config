@@ -8,6 +8,7 @@ end
 require('config.options')
 require('config.keymaps')
 require('config.autocmds')
+require('config.completion')
 
 require('plugins.colorscheme')
 require('plugins.bufferline')
