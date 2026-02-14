@@ -35,6 +35,7 @@ vim.opt.laststatus = 0                          -- 0 = never, 1 = only if there 
 vim.opt.fillchars = 'stl:─,stlnc:─,horiz:─,horizup:┴,horizdown:┬,vert:│,vertleft:┤,vertright:├,verthoriz:┼'
 
 -- other options
+vim.opt.autochdir = true                        -- When on, Vim will change to the directory containing the file which was opened or selected.
 vim.opt.backup = false                          -- creates a backup file
 vim.opt.clipboard = 'unnamed'                   -- allows neovim to access the system clipboard
 vim.opt.fileencoding = 'utf-8'                  -- the encoding written to a file
