@@ -13,7 +13,7 @@ require('lualine').setup({
     sections = {
         lualine_a = {'mode'},
         lualine_b = {'diagnostics', 'filename'},
-        lualine_c = {'lsp_status' },
+        lualine_c = {'lsp_status'},
         lualine_x = {'encoding', 'fileformat', 'filetype'},
         lualine_y = {'progress'},
         lualine_z = {'location'}
